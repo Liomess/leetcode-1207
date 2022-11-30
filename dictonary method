@@ -1,0 +1,15 @@
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        fmap={}
+        for i in range(len(arr)):
+            if arr[i] not in fmap:
+                fmap[arr[i]]=1
+            else:
+                fmap[arr[i]]+=1
+        ans={}
+        for i in fmap.values():
+            if i not in ans:
+                ans[i]=1
+            else:
+                return False
+        return True
